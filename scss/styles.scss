@@ -1,13 +1,31 @@
-header{
-    nav{
-        bg-black{
-            background-color: black;
-        }
-    }
+@import "utilidades/variables";
+@import "utilidades/mixin";
+@import "utilidades/extend";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
 }
 
+
+body{
+    
+    background-color: #08070D;
+    padding: 0px;
+    img{
+        .w100{
+            gap:unset;
+        }
+    }
+
+}
+
+
 .text-white{
-    color: whitesmoke;
+    color: $text-white;
+    font-size: x-large;
 }
 
 h1{
@@ -15,21 +33,87 @@ h1{
     text-transform: uppercase;
     color: black;
     padding: 30px;
+    text-shadow: $text-sombra;
+}
+/* modifica el navbar de la pagina principal*//* aplicarle mq*/
+.padding-200px{
+    padding: 20px;
+    gap: 70%;
 }
 
-.padding-200px{
-    padding: 2px;
-    gap: 50%;
+/* afecta las imagenes de la pagina principal*/
+.w-100{
+    width: 2048px;
+    height: 800px;
+    text-align: center;
 }
+
+
 
 main{
+    
+    /* se está aplicando a la pagina principal*/
+    gap: 30px;
+    padding: 10px;
+
     div{
         p{
-            gap: 30px;
+            /*afecta al texto de la pagina principal*/
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: x-large;
+            text-shadow:  $text-sombra;
+
+        }
+        .img-john, .jurassic-park, .indiana-jones, .star-wars{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 80%);
+            gap: 20px;
+            margin: 30px 20px;
+            padding: 30px;
+            background-color: #08070D;
+        }
+        img{
+            .carousel-item{
+                padding: 0%;
+            }
             display: flex;
         }
     }
+
+    /* arrelgo de imagenes de alan silvestri*/
+
+    .section-alan{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 100%);
+        .foto-alan-1{
+            height: 635px;
+        }
+        
+    }
+
+    /* grid en la pagina de john williams*/
+
+    .main-john{
+        display: grid;
+        .img-john, .star-wars, .jurassic-park, .indiana-jones{
+            width: 50%;
+            height: 50%;
+
+        }      
+        .indiana-jones{
+            width: 100%;
+            height: 1000px;
+            object-fit: cover;
+        }
+        
+    }
 }
+
+
+
 
 section{
     background-color: #431915;
@@ -38,40 +122,42 @@ section{
     justify-content: center;
     align-items: center;
     gap: 20px;
-    margin: 10px;
+    margin: 8px 0px;
     padding: 20px;
-
+}
+/* solucion del carrusel con respecto al menu hamburgues*/
+.next{
+    padding: 10px;
 }
 
-footer{
-    text-align: center;
-    margin: 30px;
-    padding: 20px;
-    text-transform: capitalize;
-    text-decoration: solid;
+div{
+    .carousel{
+        padding: 0%;
+    }
 }
 
 /* arreglos de hans zimmer*/
-
+/*afecta la barra de navegacióbn de hans zimmer y john williams*/
 .color-white{
-    color: white;
+    color: $items-navbar;
+    font-size: x-large;
 }
 
-.bg-all{
-    background-color: #08070D;
-    color: whitesmoke;
-    padding: 30px;
-    margin-bottom: 20px;
-    gap: 0;
-}
 
-.img{
-    padding: 30px;
-    margin: auto;
-    text-align: center;
-    background-color: #08070D;
-}
+main{
+    
+    section{
+        display: block;
 
+
+    }
+}
+.img-hans{
+    width: 80%;
+    height: 80%;
+    margin: 10px 50px 20px 100px;
+    align-items: center;
+}
 .text-hans{
     padding: 30px;
     margin: 10px;
@@ -94,11 +180,70 @@ footer{
 /* arreglos de john williams */
 /*planeo hacer un mq con las imagenes de la pagina de john williams como en la clase cuatro*/
 
-@media screen and (min-widht: 1024px){
 
-main .img-john, main .star-wars, main .jurassic-park, main .indiana-jones{
+@media screen and (min-width: 600px){
+   .bg-black{
     display: flex;
-    padding: 30px;
-    grid-column: span;
+    padding-bottom: 30px;
 }
-}
+    .button {
+        .navbar-togler{
+            padding: 11px;
+        }
+    }
+
+   }
+    .main .img-john, .star-wars, .jurassic-park, .indiana-jones{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5;
+        
+    }
+
+                                       /* ALAN SILVESTRI*/
+
+    .section-alan{
+        background-color: $color-avengers;
+
+    }
+    .titulo-alan{
+        color: beige;
+    }
+    .foto-alan{
+        align-items: center;
+        display: grid;
+        width: 100%;
+        height: 100%;
+    }
+
+    .body-alan{
+        background-color: $color-avengers;
+    }
+
+    .text-alan{
+        color: whitesmoke;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: larger;
+        text-align: center;
+        margin: 50px;
+    }
+
+
+    footer{
+        text-align: center;
+        margin: 0px;
+        padding: 20px;
+        text-transform: capitalize;
+        text-decoration: solid;
+        font-size: x-large;
+        text-shadow: 2px 2px 5px gray;
+        background-color: whitesmoke;
+        font-weight: 1200px;
+    }
+    
+    
+/* arreglos de media query para todas las paginas*/
+
+@media (min-width: 576px) { 
+    
+ }
