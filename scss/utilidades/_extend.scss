@@ -16,8 +16,10 @@
 
 %text-navbar{
     font-size: x-large;
-    color: whitesmoke;
+    color: $items-navbar;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 200px;
+    margin-top: 20px;
 }
 .text-alan{
     @extend %text;
@@ -35,6 +37,6 @@
     @extend %text-navbar;
 }
 
-.navbar-alan{
+.navbar-alan, .navbar-danny, .navbar-james{
     @extend %text-navbar;
 }
