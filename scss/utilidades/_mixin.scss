@@ -6,8 +6,17 @@
     text-align: center;
 }
 
+@mixin texto{
+    padding: 30px;
+    margin: 10px;
+    text-decoration: wavy;
+    background-color: black;
+    text-align: center;
+}
 
-
+.main-danny{
+    @include texto;
+}
 .titulo-hans{
     @include titulo;
 }

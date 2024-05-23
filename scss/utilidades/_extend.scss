@@ -16,10 +16,13 @@
 
 %text-navbar{
     font-size: x-large;
-    color: $items-navbar;
+    color: black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-right: 200px;
-    margin-top: 20px;
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    background-color: black;
+    width: 100%;
 }
 .text-alan{
     @extend %text;
@@ -37,6 +40,10 @@
     @extend %text-navbar;
 }
 
-.navbar-alan, .navbar-danny, .navbar-james{
+.navbar-todos{
     @extend %text-navbar;
+}
+
+.main-danny{
+    @extend %text;
 }

@@ -9,6 +9,15 @@
     box-sizing: border-box;
 }
 
+header{
+    background-color: black;
+    padding: 20px;
+    margin: 0%;
+}
+.color-white{
+    color: white;
+}
+
 
 body{
     
@@ -31,11 +40,7 @@ h1{
     padding: 30px;
     text-shadow: $text-sombra;
 }
-/* modifica el navbar de la pagina principal*//* aplicarle mq*/
-.padding-200px{
-    padding: 20px;
-    gap: 70%;
-}
+
 
 /* afecta las imagenes de la pagina principal*/
 .w-100{
@@ -91,7 +96,7 @@ main{
     grid-template-rows: 4fr;
 }
 
-.img-john, .jurassic-park, .indiana-jones, .star-wars, .img-james, .img-avatar, .img-titanic{
+.img-john, .jurassic-park, .indiana-jones, .star-wars, .img-james, .img-avatar, .img-titanic, .harry-potter{
     gap: 50px;
     padding: 5px;
     background-color: #BCBBBF;
@@ -100,11 +105,6 @@ main{
     object-fit: cover;
     text-align: center;
 }
-
-
-
-
-
 section{
     background-color: #BCBBBF;
     color: whitesmoke;
@@ -117,11 +117,6 @@ section{
 }
 
 /* arreglos de hans zimmer*/
-/*afecta la barra de navegacióbn de hans zimmer y john williams*/
-.color-white{
-    color: $items-navbar;
-    font-size: x-large;
-}
 
 
 main{
@@ -149,16 +144,24 @@ main{
 }
 
 
+.grid-canciones{
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-template-rows: 3fr;
+}
+
 /* arreglo de Danny Elfman */
 
 /* arreglos de john williams */
 /*planeo hacer un mq con las imagenes de la pagina de john williams como en la clase cuatro*/
 
 
-@media screen and (min-width: 600px){
+
    .bg-black{
     display: flex;
     padding-bottom: 30px;
+    background-color: black;
+    color: white;
 }
 
 
@@ -168,7 +171,6 @@ main{
         }
     }
 
-   }
 
                                        /* ALAN SILVESTRI*/
 
@@ -198,6 +200,18 @@ main{
         margin: 50px;
     }
 
+    .texto-danny{
+        display: flex;
+    }
+
+    .text-alan{
+        font-size: x-small;
+    }
+
+    .foto-alan-1{
+        display: block;
+    }
+
 
     footer{
         text-align: center;
@@ -215,6 +229,113 @@ main{
     
 /* arreglos de media query para todas las paginas*/
 
-@media (min-width: 576px) { 
-    
+@media screen and (min-width: 600px) { 
+    .grid-john{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 50%);
+
+    }
+    .indiana-jones{
+        display: none;
+    }
+
+    footer{
+        background-color: #170000;
+    }
+    .text-alan{
+        display: block;
+        font-size: x-small;
+    }
  }
+
+ @media screen and (min-width: 1024px){    
+    .grid-john{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 10% 30%;
+        margin: 10px;
+    }
+    .img-john, .jurassic-park{
+        grid-column: span 2;
+        grid-row: span 2;
+        height: 340px;
+    }
+    .indiana-jones{
+        display: block;
+        width: 500px;
+        height: 340px;
+    }
+    .star-wars{
+        height: 340px;
+        width: 500px;
+    }
+
+    .titulo-john{
+        grid-column: span 2;
+        margin: 30px;
+    }
+
+    .main-hans{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .img-hans{
+        background-color: black;
+        padding: 90px 30px;
+    }
+    .text-hans{
+        font-size: small;
+    }
+    .h2-hans{
+        background-color: #08172B;
+        text-shadow: $text-sombra;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin: 0px;
+        width: 100%;
+    }
+
+    .grid-james{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 50% 50%;
+        margin-top: 50px;
+    }
+    .img-titanic, .img-avatar{
+        grid-row: span 1;
+        height: 300px;
+        align-content: center;
+        align-items: center;
+    }
+
+    /* Danny elfnman*/
+    .main-danny{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row: inherit;
+    }
+    .texto-danny, .text{
+        display: none;
+    }
+}
+
+    /* arreglos de danny elfman*/
+    .texto-danny{
+        display: flex;
+    }
+
+    .main-danny{
+        display: block;
+    }
+    .text-alan{
+        font-size: larger;
+    }
+
+
+
+    footer{
+        background-color: #08172B;
+}
+
+
+
+ 

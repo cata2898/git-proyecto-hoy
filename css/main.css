@@ -1,4 +1,12 @@
 @charset "UTF-8";
+.main-danny {
+  padding: 30px;
+  margin: 10px;
+  text-decoration: wavy;
+  background-color: black;
+  text-align: center;
+}
+
 .titulo-hans {
   font-size: xxx-large;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -39,7 +47,7 @@
   text-align: center;
 }
 
-.text-hans, .text-alan {
+.main-danny, .text-hans, .text-alan {
   color: whitesmoke;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: x-larger;
@@ -55,18 +63,31 @@
   text-align: center;
 }
 
-.navbar-alan, .navbar-danny, .navbar-james, .color-white {
+.navbar-todos, .color-white {
   font-size: x-large;
-  color: whitesmoke;
+  color: black;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  margin-right: 200px;
-  margin-top: 20px;
+  padding-right: 100px;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  background-color: black;
+  width: 100%;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+header {
+  background-color: black;
+  padding: 20px;
+  margin: 0%;
+}
+
+.color-white {
+  color: white;
 }
 
 body {
@@ -86,12 +107,6 @@ h1 {
   color: black;
   padding: 30px;
   text-shadow: 2px 2px 6px #050100;
-}
-
-/* modifica el navbar de la pagina principal*/ /* aplicarle mq*/
-.padding-200px {
-  padding: 20px;
-  gap: 70%;
 }
 
 /* afecta las imagenes de la pagina principal*/
@@ -138,7 +153,7 @@ main .section-alan .foto-alan-1 {
   grid-template-rows: 4fr;
 }
 
-.img-john, .jurassic-park, .indiana-jones, .star-wars, .img-james, .img-avatar, .img-titanic {
+.img-john, .jurassic-park, .indiana-jones, .star-wars, .img-james, .img-avatar, .img-titanic, .harry-potter {
   gap: 50px;
   padding: 5px;
   background-color: #BCBBBF;
@@ -160,12 +175,6 @@ section {
 }
 
 /* arreglos de hans zimmer*/
-/*afecta la barra de navegacióbn de hans zimmer y john williams*/
-.color-white {
-  color: whitesmoke;
-  font-size: x-large;
-}
-
 main section {
   display: block;
 }
@@ -187,18 +196,26 @@ main section {
   text-align: center;
 }
 
+.grid-canciones {
+  display: grid;
+  grid-template-columns: 2fr;
+  grid-template-rows: 3fr;
+}
+
 /* arreglo de Danny Elfman */
 /* arreglos de john williams */
 /*planeo hacer un mq con las imagenes de la pagina de john williams como en la clase cuatro*/
-@media screen and (min-width: 600px) {
-  .bg-black {
-    display: flex;
-    padding-bottom: 30px;
-  }
-  .button .navbar-togler {
-    padding: 11px;
-  }
+.bg-black {
+  display: flex;
+  padding-bottom: 30px;
+  background-color: black;
+  color: white;
 }
+
+.button .navbar-togler {
+  padding: 11px;
+}
+
 /* ALAN SILVESTRI*/
 .section-alan {
   background-color: #1E1E1E;
@@ -227,6 +244,18 @@ main section {
   margin: 50px;
 }
 
+.texto-danny {
+  display: flex;
+}
+
+.text-alan {
+  font-size: x-small;
+}
+
+.foto-alan-1 {
+  display: block;
+}
+
 footer {
   text-align: center;
   margin: 0px;
@@ -241,5 +270,102 @@ footer {
 }
 
 /* arreglos de media query para todas las paginas*/
+@media screen and (min-width: 600px) {
+  .grid-john {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 50%);
+  }
+  .indiana-jones {
+    display: none;
+  }
+  footer {
+    background-color: #170000;
+  }
+  .text-alan {
+    display: block;
+    font-size: x-small;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .grid-john {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 10% 30%;
+    margin: 10px;
+  }
+  .img-john, .jurassic-park {
+    grid-column: span 2;
+    grid-row: span 2;
+    height: 340px;
+  }
+  .indiana-jones {
+    display: block;
+    width: 500px;
+    height: 340px;
+  }
+  .star-wars {
+    height: 340px;
+    width: 500px;
+  }
+  .titulo-john {
+    grid-column: span 2;
+    margin: 30px;
+  }
+  .main-hans {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .img-hans {
+    background-color: black;
+    padding: 90px 30px;
+  }
+  .text-hans {
+    font-size: small;
+  }
+  .h2-hans {
+    background-color: #08172B;
+    text-shadow: 2px 2px 6px #050100;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0px;
+    width: 100%;
+  }
+  .grid-james {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50% 50%;
+    margin-top: 50px;
+  }
+  .img-titanic, .img-avatar {
+    grid-row: span 1;
+    height: 300px;
+    align-content: center;
+    align-items: center;
+  }
+  /* Danny elfnman*/
+  .main-danny {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row: inherit;
+  }
+  .texto-danny, .text {
+    display: none;
+  }
+}
+/* arreglos de danny elfman*/
+.texto-danny {
+  display: flex;
+}
+
+.main-danny {
+  display: block;
+}
+
+.text-alan {
+  font-size: larger;
+}
+
+footer {
+  background-color: #08172B;
+}
 
 /*# sourceMappingURL=main.css.map */
